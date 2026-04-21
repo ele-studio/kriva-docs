@@ -15,6 +15,7 @@
     --surface2: #1c1c20;
     --border: #2a2a30;
     --accent: #1b3173;
+    --link: #c9d551;
     --accent-dim: rgba(47,71,143,0.12);
     --accent-dim2: rgba(47,71,143,0.06);
     --text: #e8e8ec;
@@ -160,9 +161,9 @@
   #md-content p { font-size:14px; line-height:1.75; color:var(--text-muted); margin-bottom:12px; }
   #md-content ul, #md-content ol { padding-left:20px; margin-bottom:12px; }
   #md-content li { font-size:14px; color:var(--text-muted); line-height:1.7; margin-bottom:4px; }
-  #md-content li a { color: var(--accent); }
-  #md-content a { color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(47,71,143,0.3); transition:border-color 0.12s; }
-  #md-content a:hover { border-bottom-color:var(--accent); }
+  #md-content li a { color: var(--link); }
+  #md-content a { color:var(--link); text-decoration:none; border-bottom:1px solid rgba(201,213,81,0.3); transition:border-color 0.12s; }
+  #md-content a:hover { border-bottom-color:var(--link); }
   #md-content code {
     font-family:'DM Mono',monospace; font-size:12px;
     background:var(--surface2); border:1px solid var(--border);
@@ -247,11 +248,11 @@
     font-size: 12px;
   }
   .template-poc a {
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
-    border-bottom: 1px solid rgba(47,71,143,0.3);
+    border-bottom: 1px solid rgba(201,213,81,0.3);
   }
-  .template-poc a:hover { border-bottom-color: var(--accent); }
+  .template-poc a:hover { border-bottom-color: var(--link); }
 
   /* ── MOBILE ── */
   #menu-btn {
