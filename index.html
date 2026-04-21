@@ -22,6 +22,22 @@
     --text-muted: #7a7a8a;
     --text-dim: #4a4a58;
     --sidebar-w: 270px;
+    --code-text: #a8d8ff;
+  }
+
+  html[data-theme='light'] {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --surface2: #edf1f8;
+    --border: #d6dde9;
+    --accent: #1b3173;
+    --link: #1b3173;
+    --accent-dim: rgba(27,49,115,0.14);
+    --accent-dim2: rgba(27,49,115,0.08);
+    --text: #1f2a3d;
+    --text-muted: #55637c;
+    --text-dim: #7a869d;
+    --code-text: #1b3173;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -167,7 +183,7 @@
   #md-content code {
     font-family:'DM Mono',monospace; font-size:12px;
     background:var(--surface2); border:1px solid var(--border);
-    padding:1px 5px; border-radius:4px; color:#a8d8ff;
+    padding:1px 5px; border-radius:4px; color:var(--code-text);
   }
   #md-content pre {
     background:var(--surface2); border:1px solid var(--border);
@@ -260,6 +276,37 @@
     background:var(--surface); border:1px solid var(--border); border-radius:8px;
     width:36px; height:36px; align-items:center; justify-content:center; cursor:pointer;
   }
+  #theme-btn {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    width: 54px;
+    height: 30px;
+    padding: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+  #theme-btn .theme-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--text);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
+  }
+  html[data-theme='light'] #theme-btn {
+    justify-content: flex-end;
+  }
+  #theme-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
   @media (max-width:768px) {
     #menu-btn { display:flex; }
     #sidebar {
@@ -275,6 +322,9 @@
 
 <button id="menu-btn" onclick="toggleSidebar()" title="Menu">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<button id="theme-btn" onclick="toggleTheme()" title="Switch theme" aria-label="Toggle light and dark theme" aria-pressed="false">
+  <span class="theme-thumb" aria-hidden="true"></span>
 </button>
 
 <div id="app">
@@ -446,6 +496,36 @@ function handleSearch(q) {
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('open');
 }
+
+function applyTheme(theme) {
+  const selectedTheme = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', selectedTheme);
+  const themeBtn = document.getElementById('theme-btn');
+  if (themeBtn) {
+    const isLight = selectedTheme === 'light';
+    themeBtn.setAttribute('aria-pressed', String(isLight));
+    themeBtn.title = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+  }
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem('kriva-docs-theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    applyTheme(savedTheme);
+    return;
+  }
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(prefersDark ? 'dark' : 'light');
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('kriva-docs-theme', nextTheme);
+  applyTheme(nextTheme);
+}
+
+initTheme();
 </script>
 </body>
 </html>
