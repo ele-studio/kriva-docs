@@ -1,1 +1,202 @@
-# kriva-docs
+# Shopify Horizon Theme Documentation
+
+Generated from `templates/`, `sections/`, `blocks/`, and `snippets/`. Components shared across templates are documented once and linked from each template page.
+
+Image recommendations are inferred from the current template values and the rendered dimensions/crop hints in Liquid. The uploaded `shopify://shop_images/...` source files are not stored locally in this repo, so recommendations use rendered aspect ratios when available and usage-based fallbacks when dimensions are layout-driven.
+
+## Templates
+
+- [404.json](templates/404.json.md)
+- [article.json](templates/article.json.md)
+- [cart.json](templates/cart.json.md)
+- [collection.json](templates/collection.json.md)
+- [gift_card.liquid](templates/gift_card.liquid.md)
+- [index.json](templates/index.json.md)
+- [list-collections.json](templates/list-collections.json.md)
+- [page.about.json](templates/page.about.json.md)
+- [page.article.json](templates/page.article.json.md)
+- [page.community.json](templates/page.community.json.md)
+- [page.contact.json](templates/page.contact.json.md)
+- [page.education.json](templates/page.education.json.md)
+- [page.faq.json](templates/page.faq.json.md)
+- [page.json](templates/page.json.md)
+- [page.transparency.json](templates/page.transparency.json.md)
+- [password.json](templates/password.json.md)
+- [product.json](templates/product.json.md)
+- [search.json](templates/search.json.md)
+
+## Sections
+
+- [absorption-result](sections/absorption-result.md) — used by page.education.json
+- [accredited](sections/accredited.md) — used by page.transparency.json
+- [active-bodies](sections/active-bodies.md) — used by index.json
+- [all-faq](sections/all-faq.md) — used by page.faq.json
+- [athelete-stories](sections/athelete-stories.md) — used by page.community.json, page.education.json
+- [backed-by](sections/backed-by.md) — used by page.education.json
+- [become-ambassador](sections/become-ambassador.md) — used by page.community.json
+- [blog-details](sections/blog-details.md) — used by article.json
+- [certificate](sections/certificate.md) — used by page.transparency.json
+- [collections-tab](sections/collections-tab.md) — used by collection.json, list-collections.json
+- [common-hero](sections/common-hero.md) — used by collection.json, list-collections.json, page.about.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json
+- [double-marquee](sections/double-marquee.md) — used by index.json
+- [fast-relief](sections/fast-relief.md) — used by index.json
+- [formulation-process](sections/formulation-process.md) — used by page.education.json
+- [hero-section](sections/hero-section.md) — used by index.json
+- [key-diffrences](sections/key-diffrences.md) — used by page.education.json
+- [kriva-athletic](sections/kriva-athletic.md) — used by page.about.json, page.json
+- [kriva-team](sections/kriva-team.md) — used by index.json
+- [latest-blog](sections/latest-blog.md) — used by page.community.json, page.education.json, page.transparency.json
+- [main-404](sections/main-404.md) — used by 404.json
+- [main-blog-post](sections/main-blog-post.md) — used by article.json
+- [main-cart](sections/main-cart.md) — used by cart.json
+- [main-collection-list](sections/main-collection-list.md) — used by list-collections.json
+- [main-page](sections/main-page.md) — used by page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json
+- [new-hero-section](sections/new-hero-section.md) — used by collection.json, index.json, page.about.json, page.contact.json, page.education.json, page.transparency.json
+- [password](sections/password.md) — used by password.json
+- [product-detail-faq](sections/product-detail-faq.md) — used by product.json
+- [product-information](sections/product-information.md) — used by product.json
+- [product-list](sections/product-list.md) — used by 404.json, cart.json
+- [product-recommendations](sections/product-recommendations.md) — used by product.json
+- [science-integrity](sections/science-integrity.md) — used by page.about.json, page.json
+- [search-header](sections/search-header.md) — used by search.json
+- [search-results](sections/search-results.md) — used by search.json
+- [section](sections/section.md) — used by collection.json, page.contact.json
+- [superior-science](sections/superior-science.md) — used by index.json
+- [testing-process](sections/testing-process.md) — used by page.transparency.json
+- [trusted](sections/trusted.md) — used by index.json
+- [what-atheletes](sections/what-atheletes.md) — used by page.community.json
+- [what-cbda](sections/what-cbda.md) — used by page.education.json
+- [why-kriva](sections/why-kriva.md) — used by page.about.json, page.json
+
+## Shared Block Dependency Map
+
+- `_blog-post-content` (`blocks/_blog-post-content.liquid`): article.json
+- `_blog-post-featured-image` (`blocks/_blog-post-featured-image.liquid`): article.json
+- `_blog-post-info-text` (`blocks/_blog-post-info-text.liquid`): article.json
+- `_cart-products` (`blocks/_cart-products.liquid`): cart.json
+- `_cart-summary` (`blocks/_cart-summary.liquid`): cart.json
+- `_cart-title` (`blocks/_cart-title.liquid`): cart.json
+- `_collection-card` (`blocks/_collection-card.liquid`): list-collections.json
+- `_collection-card-image` (`blocks/_collection-card-image.liquid`): list-collections.json
+- `_divider` (`blocks/_divider.liquid`): product.json
+- `_heading` (`blocks/_heading.liquid`): search.json
+- `_product-card` (`blocks/_product-card.liquid`): 404.json, cart.json, product.json, search.json
+- `_product-card-gallery` (`blocks/_product-card-gallery.liquid`): 404.json, cart.json, product.json, search.json
+- `_product-details` (`blocks/_product-details.liquid`): product.json
+- `_product-list-button` (`blocks/_product-list-button.liquid`): cart.json
+- `_product-list-content` (`blocks/_product-list-content.liquid`): 404.json, cart.json
+- `_product-list-text` (`blocks/_product-list-text.liquid`): cart.json
+- `_product-media-gallery` (`blocks/_product-media-gallery.liquid`): product.json
+- `_search-input` (`blocks/_search-input.liquid`): search.json
+- `accelerated-checkout` (`blocks/accelerated-checkout.liquid`): product.json
+- `add-to-cart` (`blocks/add-to-cart.liquid`): product.json
+- `athletic_board`: page.about.json, page.json
+- `batches`: page.transparency.json
+- `benefit_text`: page.education.json
+- `button` (`blocks/button.liquid`): 404.json
+- `buy-buttons` (`blocks/buy-buttons.liquid`): product.json
+- `collection-title` (`blocks/collection-title.liquid`): list-collections.json
+- `comfort_block`: index.json
+- `contact-form` (`blocks/contact-form.liquid`): page.contact.json
+- `contact-form-submit-button` (`blocks/contact-form-submit-button.liquid`): page.contact.json
+- `email-signup` (`blocks/email-signup.liquid`): password.json
+- `filters` (`blocks/filters.liquid`): search.json
+- `focus_text`: page.about.json, page.education.json, page.json
+- `group` (`blocks/group.liquid`): list-collections.json, product.json
+- `information_faq`: page.faq.json
+- `legal_faq`: page.faq.json
+- `line_one`: index.json
+- `line_two`: index.json
+- `logo` (`blocks/logo.liquid`): password.json
+- `option`: page.transparency.json
+- `order_faq`: page.faq.json
+- `page-content` (`blocks/page-content.liquid`): page.about.json, page.article.json, page.community.json, page.education.json, page.faq.json, page.json, page.transparency.json
+- `partners`: page.transparency.json
+- `price` (`blocks/price.liquid`): 404.json, cart.json, product.json, search.json
+- `process`: page.education.json, page.transparency.json
+- `product-title` (`blocks/product-title.liquid`): 404.json, cart.json, product.json, search.json
+- `qualification`: page.community.json
+- `qualification_card`: page.community.json
+- `quantity` (`blocks/quantity.liquid`): product.json
+- `review` (`blocks/review.liquid`): index.json, page.community.json
+- `row`: page.education.json
+- `stories`: page.community.json, page.education.json
+- `tab`: index.json
+- `team_image`: index.json
+- `text` (`blocks/text.liquid`): 404.json, article.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json
+- `tick_item`: index.json
+- `usage_faq`: page.faq.json
+- `variant-picker` (`blocks/variant-picker.liquid`): product.json
+
+## Shared Snippet Dependency Map
+
+- `add-to-cart-button` (`snippets/add-to-cart-button.liquid`): 404.json, cart.json, product.json, search.json
+- `background-media` (`snippets/background-media.liquid`): 404.json, cart.json, collection.json, list-collections.json, page.contact.json, password.json, product.json
+- `bento-grid` (`snippets/bento-grid.liquid`): 404.json, cart.json, list-collections.json
+- `blog-comment-form` (`snippets/blog-comment-form.liquid`): article.json
+- `border-override` (`snippets/border-override.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.contact.json, password.json, product.json, search.json
+- `button` (`snippets/button.liquid`): 404.json, cart.json
+- `card-gallery` (`snippets/card-gallery.liquid`): 404.json, cart.json, product.json, search.json
+- `cart-bubble` (`snippets/cart-bubble.liquid`): cart.json
+- `cart-discount` (`snippets/cart-discount.liquid`): cart.json
+- `cart-note` (`snippets/cart-note.liquid`): cart.json
+- `cart-products` (`snippets/cart-products.liquid`): cart.json
+- `cart-summary` (`snippets/cart-summary.liquid`): cart.json
+- `collection-card` (`snippets/collection-card.liquid`): list-collections.json
+- `color-schemes` (`snippets/color-schemes.liquid`): gift_card.liquid
+- `contact-form` (`snippets/contact-form.liquid`): page.contact.json
+- `disclosure-content` (`snippets/disclosure-content.liquid`): cart.json
+- `disclosure-trigger` (`snippets/disclosure-trigger.liquid`): cart.json
+- `divider` (`snippets/divider.liquid`): product.json
+- `editorial-blog-grid` (`snippets/editorial-blog-grid.liquid`): 404.json, cart.json, list-collections.json
+- `editorial-collection-grid` (`snippets/editorial-collection-grid.liquid`): 404.json, cart.json, list-collections.json
+- `editorial-product-grid` (`snippets/editorial-product-grid.liquid`): 404.json, cart.json, list-collections.json
+- `facets-actions` (`snippets/facets-actions.liquid`): search.json
+- `filter-remove-buttons` (`snippets/filter-remove-buttons.liquid`): search.json
+- `gap-style` (`snippets/gap-style.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json, search.json
+- `gift-card-recipient-form` (`snippets/gift-card-recipient-form.liquid`): product.json
+- `grid-density-controls` (`snippets/grid-density-controls.liquid`): search.json
+- `group` (`snippets/group.liquid`): 404.json, cart.json, list-collections.json, product.json
+- `hero-tab-card` (`snippets/hero-tab-card.liquid`): index.json
+- `icon` (`snippets/icon.liquid`): password.json, product.json, search.json
+- `jumbo-text` (`snippets/jumbo-text.liquid`): password.json
+- `layout-panel-style` (`snippets/layout-panel-style.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json, search.json
+- `overflow-list` (`snippets/overflow-list.liquid`): search.json
+- `overlay` (`snippets/overlay.liquid`): 404.json, cart.json, collection.json, list-collections.json, page.contact.json, product.json
+- `pagination-controls` (`snippets/pagination-controls.liquid`): search.json
+- `price` (`snippets/price.liquid`): 404.json, cart.json, product.json, search.json
+- `product-card` (`snippets/product-card.liquid`): 404.json, cart.json, product.json, search.json
+- `product-card-badges` (`snippets/product-card-badges.liquid`): 404.json, cart.json, product.json, search.json
+- `product-grid` (`snippets/product-grid.liquid`): search.json
+- `product-information-content` (`snippets/product-information-content.liquid`): product.json
+- `product-media` (`snippets/product-media.liquid`): product.json
+- `product-media-gallery-content` (`snippets/product-media-gallery-content.liquid`): product.json
+- `quantity-selector` (`snippets/quantity-selector.liquid`): cart.json, product.json
+- `quick-add` (`snippets/quick-add.liquid`): 404.json, cart.json, product.json, search.json
+- `resource-image` (`snippets/resource-image.liquid`): list-collections.json
+- `resource-list` (`snippets/resource-list.liquid`): 404.json, cart.json, list-collections.json
+- `resource-list-carousel` (`snippets/resource-list-carousel.liquid`): 404.json, cart.json, list-collections.json, product.json
+- `section` (`snippets/section.liquid`): collection.json, page.contact.json
+- `size-style` (`snippets/size-style.liquid`): 404.json, article.json, cart.json, index.json, list-collections.json, page.community.json, page.contact.json, password.json, product.json, search.json
+- `skip-to-content-link` (`snippets/skip-to-content-link.liquid`): product.json, search.json
+- `slideshow` (`snippets/slideshow.liquid`): 404.json, cart.json, list-collections.json, product.json, search.json
+- `slideshow-arrow` (`snippets/slideshow-arrow.liquid`): 404.json, cart.json, list-collections.json, product.json, search.json
+- `slideshow-arrows` (`snippets/slideshow-arrows.liquid`): 404.json, cart.json, list-collections.json, product.json, search.json
+- `slideshow-controls` (`snippets/slideshow-controls.liquid`): product.json
+- `slideshow-slide` (`snippets/slideshow-slide.liquid`): 404.json, cart.json, list-collections.json, product.json
+- `sorting` (`snippets/sorting.liquid`): search.json
+- `spacing-padding` (`snippets/spacing-padding.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json, search.json
+- `spacing-style` (`snippets/spacing-style.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json, search.json
+- `strikethrough-variant` (`snippets/strikethrough-variant.liquid`): product.json
+- `stylesheets` (`snippets/stylesheets.liquid`): gift_card.liquid
+- `swatch` (`snippets/swatch.liquid`): product.json, search.json
+- `tax-info` (`snippets/tax-info.liquid`): cart.json
+- `text` (`snippets/text.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json, search.json
+- `theme-styles-variables` (`snippets/theme-styles-variables.liquid`): gift_card.liquid
+- `timeline-scope` (`snippets/timeline-scope.liquid`): 404.json, cart.json, list-collections.json, product.json, search.json
+- `typography-style` (`snippets/typography-style.liquid`): 404.json, article.json, cart.json, collection.json, list-collections.json, page.about.json, page.article.json, page.community.json, page.contact.json, page.education.json, page.faq.json, page.json, page.transparency.json, password.json, product.json, search.json
+- `unit-price` (`snippets/unit-price.liquid`): 404.json, cart.json, product.json, search.json
+- `util-product-grid-card-size` (`snippets/util-product-grid-card-size.liquid`): search.json
+- `variant-main-picker` (`snippets/variant-main-picker.liquid`): product.json
+- `video` (`snippets/video.liquid`): product.json
+- `volume-pricing-info` (`snippets/volume-pricing-info.liquid`): cart.json
