@@ -1,4 +1,4 @@
-# Shopify Horizon Theme Documentation
+# Shopify Kriva Theme Documentation
 
 Generated from `templates/`, `sections/`, `blocks/`, and `snippets/`. Components shared across templates are documented once and linked from each template page.
 
